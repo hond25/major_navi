@@ -90,28 +90,28 @@ button:hover, .answer-btn:hover { transform: translateY(-2px); box-shadow: 0 6px
     background: #FFFFFF;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
-    padding: 30px 20px;
-    width: 100%;
-    max-width: 420px;
+    padding: 30px 10px;
+    /* width: 100%;
+    max-width: 420px; */
+    width: 358px;
     box-sizing: border-box;
     text-align: center;
 }
 
 #result-major-name {
     font-weight: bold;
-    font-size: 24px; /* ★ 修正: フォントサイズをさらに調整 */
+    font-size: 24px;
     margin: 0 0 12px 0;
     text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    white-space: nowrap;
-    /* ★ 修正: 以下の2行を削除 */
-    /* overflow: hidden; */
-    /* text-overflow: ellipsis; */
+    /* white-space: nowrap; を必ず削除してください */
 }
 
+/* 「専攻」という文字のスタイル */
 #result-major-name .senko-suffix {
     font-size: 16px;
     font-weight: normal;
-    margin-left: 4px;
+    /* margin-left: 4px; を削除 */
+    display: block; /* ← これが改行を強制します */
 }
 
 #result-catchphrase {
@@ -173,25 +173,25 @@ button:hover, .answer-btn:hover { transform: translateY(-2px); box-shadow: 0 6px
     background-color: #fff;
     padding: 16px;
     border-radius: 30px;
-    border: 2px solid;
+    color: #FF8E4A;
 }
 
 /* --- 各専攻のテーマカラー --- */
-.theme-media-innovation #result-major-name,
-.theme-media-innovation #restart-btn { color: #FF8E4A; }
+.theme-media-innovation #result-major-name { color: #67C5E0; } /* ★ 専攻名の文字色 */
 .theme-media-innovation #major-link-btn { background-color: #67C5E0; }
+/* .theme-media-innovation #restart-btn { border-color: #67C5E0; } */
 
-.theme-media-communication #result-major-name,
-.theme-media-communication #restart-btn { color: #FF8E4A; }
+.theme-media-communication #result-major-name { color: #FFC562; } /* ★ 専攻名の文字色 */
 .theme-media-communication #major-link-btn { background-color: #FFC562; }
+/* .theme-media-communication #restart-btn { border-color: #FFC562; } */
 
-.theme-music-media #result-major-name,
-.theme-music-media #restart-btn { color: #FF8E4A; }
+.theme-music-media #result-major-name { color: #F15FB4; } /* ★ 専攻名の文字色 */
 .theme-music-media #major-link-btn { background-color: #F15FB4; }
+/* .theme-music-media #restart-btn { border-color: #F15FB4; } */
 
-.theme-media-design #result-major-name,
-.theme-media-design #restart-btn { color: #FF8E4A; }
+.theme-media-design #result-major-name { color: #E76F51; } /* ★ 専攻名の文字色 */
 .theme-media-design #major-link-btn { background-color: #E76F51; }
+/* .theme-media-design #restart-btn { border-color: #E76F51; } */
 
 
 /* --- 画面の状態に応じたスタイル --- */
