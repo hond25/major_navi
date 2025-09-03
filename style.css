@@ -142,6 +142,7 @@ button:hover, .answer-btn:hover { transform: translateY(-2px); box-shadow: 0 6px
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 8px;
+    align-items: center;
 }
 
 .tag-pill {
