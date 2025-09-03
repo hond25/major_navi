@@ -180,22 +180,18 @@ button:hover, .answer-btn:hover { transform: translateY(-2px); box-shadow: 0 6px
 .theme-media-innovation #result-major-name,
 .theme-media-innovation #restart-btn { color: #FF8E4A; }
 .theme-media-innovation #major-link-btn { background-color: #67C5E0; }
-.theme-media-innovation #restart-btn { border-color: #67C5E0; }
 
 .theme-media-communication #result-major-name,
 .theme-media-communication #restart-btn { color: #FF8E4A; }
 .theme-media-communication #major-link-btn { background-color: #FFC562; }
-.theme-media-communication #restart-btn { border-color: #FFC562; }
 
 .theme-music-media #result-major-name,
 .theme-music-media #restart-btn { color: #FF8E4A; }
 .theme-music-media #major-link-btn { background-color: #F15FB4; }
-.theme-music-media #restart-btn { border-color: #F15FB4; }
 
 .theme-media-design #result-major-name,
 .theme-media-design #restart-btn { color: #FF8E4A; }
 .theme-media-design #major-link-btn { background-color: #E76F51; }
-.theme-media-design #restart-btn { border-color: #E76F51; }
 
 
 /* --- 画面の状態に応じたスタイル --- */
@@ -204,16 +200,6 @@ button:hover, .answer-btn:hover { transform: translateY(-2px); box-shadow: 0 6px
 
 .container.result-active h1 { display: none; }
 
-/*
-  コンテナ自体の不要なスタイル変更をなくし、
-  他の画面と同じ中央揃えのレイアウトを維持します。
-*/
-.container.result-active { }
-
-/*
-  results-screenの内部にある要素（結果カードやボタン）を
-  中央に配置するために、この要素をFlexコンテナにします。
-*/
 .container.result-active #results-screen {
     width: 100%;
     max-width: 600px;
