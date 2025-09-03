@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>わくわく専攻ナビ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>
+            <div class="title-wrapper">
+                <span class="wakuwaku">わくわく</span><br>
+                <span class="senko-navi">専攻ナビ</span>
+            </div>
+        </h1>
+
+        <div id="start-screen">
+            <button id="start-btn">診断する</button>
+            <p>あなたに向いている<br>専攻が見つかるかも!?</p>
+        </div>
+
+        <div id="quiz-screen" class="hidden">
+            <div class="quiz-card">
+                <div class="quiz-icon">
+                    <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="55" height="55" fill="url(#pattern0_129_274)"/>
+                        <defs>
+                            <pattern id="pattern0_129_274" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_129_274" transform="scale(0.0104167)"/>
+                            </pattern>
+                            <image id="image0_129_274" width="96" height="96" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
+                            </defs>
+                        </svg>
+                </div>
+                <h2 id="question-text"></h2>
+                
+            </div>
+            <div class="btn-group">
+                <button id="no-btn" class="answer-btn">No</button>
+                <button id="yes-btn" class="answer-btn">Yes</button>
+            </div>
+        </div>
+
+        <div id="results-screen" class="hidden">
+            <h2 class="result-title">診断結果</h2>
+            <div class="result-card">
+                <h3 id="result-major-name"></h3>
+                <p id="result-catchphrase"></p>
+                <div class="description-box">
+                    <p id="result-major-description"></p>
+                </div>
+                <div id="result-tags" class="tags-container"></div>
+            </div>
+            <div class="result-actions">
+                <button id="major-link-btn"></button>
+                <button id="restart-btn">もう一度診断する</button>
+            </div>
+        </div>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
