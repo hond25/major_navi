@@ -214,5 +214,5 @@ button:hover, .answer-btn:hover { transform: translateY(-2px); box-shadow: 0 6px
 }
 
 .container.quiz-active .title-logo {
-    width: 140px; /* クイズが始まったら少し小さくする */
+    width: 100px; /* クイズが始まったら少し小さくする */
 }
