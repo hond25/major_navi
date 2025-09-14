@@ -11,6 +11,10 @@ body {
     padding: 15px;
     box-sizing: border-box;
 }
+body.state-active {
+    align-items: flex-start;
+    padding-top: 5vh;
+}
 
 .container {
     padding: 25px 15px;
@@ -65,7 +69,8 @@ p { line-height: 1.7; font-size: 24px; color: #000000; }
 .quiz-card {
     background-color: #fff; border-radius: 24px; padding: 30px 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); width: 100%; max-width: 400px;
-    margin: 40px auto 0; box-sizing: border-box;
+    margin: 30px auto 0; /* ← '83px' から '30px' などに数値を小さくする */
+    box-sizing: border-box;
 }
 .quiz-icon {
     width: 64px; height: 64px; margin: 0 auto 20px; background-color: #FEF1F0;

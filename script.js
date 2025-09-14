@@ -72,6 +72,7 @@ function initialize() {
     
     container.classList.remove('quiz-active');
     container.classList.remove('result-active');
+    document.body.classList.remove('state-active'); 
 }
 
 function displayQuestion(questionId) {
@@ -124,6 +125,7 @@ startBtn.addEventListener('click', () => {
     quizScreen.classList.remove('hidden');
     container.classList.add('quiz-active');
     container.classList.remove('result-active');
+    document.body.classList.add('state-active'); // ← この行を追加
 });
 
 yesBtn.addEventListener('click', () => handleAnswer(true));
