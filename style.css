@@ -10,10 +10,11 @@ body {
     margin: 0;
     padding: 15px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 body.state-active {
     align-items: flex-start;
-    padding-top: 5vh;
+    padding-top: 4vh;
 }
 
 .container {
