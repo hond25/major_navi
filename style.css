@@ -1,7 +1,7 @@
 /* --- 基本スタイル --- */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Hiragino Sans', 'Noto Sans CJK JP', sans-serif;
-    background-color: #FF8E4A;
+    background: linear-gradient(180deg, #FFBE7C, #FFA269);
     color: #333;
     display: flex;
     justify-content: center;
@@ -17,7 +17,10 @@ body.state-active {
 }
 
 .container {
-    padding: 25px 15px;
+    padding-top: 140px; /* ← 194px (ロゴの上位置) + 280px (ロゴの高さ) + 67px (指定マージン) */
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 25px;
     border-radius: 12px;
     width: 100%;
     max-width: 600px;
@@ -25,6 +28,7 @@ body.state-active {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: padding-top 0.3s ease;
 }
 
 h1 {
@@ -39,9 +43,12 @@ h1 .wakuwaku { font-size: 36px; transition: font-size 0.3s ease; }
 h1 .senko-navi { font-size: 48px; padding-left: 48px; transition: font-size 0.3s ease, padding-left 0.3s ease; }
 
 .title-logo {
-    width: 160px; /* ロゴの基本サイズ */
+    position: absolute; /* ← 追加：絶対位置指定を有効にする */
+    top: 194px;         /* ← 追加：上からの位置 */
+    left: 104px;  
+    width: 186px; /* ロゴの基本サイズ */
     height: auto; /* 高さは自動で調整 */
-    transition: width 0.3s ease; /* アニメーション効果 */
+    transition: width 0.3s ease, top 0.3s ease, left 0.3s ease;
     margin-bottom: 10px; /* ボタンとの間隔を調整 */
 }
 
@@ -60,7 +67,7 @@ p { line-height: 1.7; font-size: 24px; color: #000000; }
 .hidden { display: none; }
 
 #start-btn {
-    background-color: #fff; color: #F9A870; width: 174px; height: 48px;
+    background-color: #FF823C; color: #ffffff; width: 174px; height: 48px;
     border-radius: 30px; padding: 0; display: inline-flex;
     justify-content: center; align-items: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -69,20 +76,24 @@ p { line-height: 1.7; font-size: 24px; color: #000000; }
 .quiz-card {
     background-color: #fff; border-radius: 24px; padding: 30px 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); width: 100%; max-width: 400px;
-    margin: 30px auto 0; /* ← '83px' から '30px' などに数値を小さくする */
+    margin: 0 auto;
     box-sizing: border-box;
 }
 .quiz-icon {
-    width: 64px; height: 64px; margin: 0 auto 20px; background-color: #FEF1F0;
+    width: 64px; height: 64px; margin: 0 auto 20px;
     border-radius: 50%; display: flex; align-items: center; justify-content: center;
 }
-.quiz-icon svg { width: 40px; height: 40px; }
+.quiz-icon img { 
+    width: 50px; 
+    height: 50px; 
+    object-fit: contain; /* 画像がコンテナに収まるように調整 */
+}
 button, .answer-btn { border: none; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: all 0.3s ease; }
 button:hover, .answer-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
 .btn-group { margin-top: 72px; display: flex; flex-direction: row; gap: 15px; justify-content: center; }
 .answer-btn {
     color: white; padding: 15px 20px; border-radius: 30px;
-    flex-grow: 1; max-width: 150px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; max-width: 130px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 #no-btn { background-color: #79A3FF; border: 2px solid #96C7FF; }
 #yes-btn { background-color: #FF5B49; border: 2px solid #FFAE91; }
@@ -151,6 +162,7 @@ button:hover, .answer-btn:hover { transform: translateY(-2px); box-shadow: 0 6px
     justify-content: flex-start;
     gap: 8px;
     align-items: center;
+    padding-left: 6px;
 }
 
 .tag-pill {
@@ -219,5 +231,13 @@ button:hover, .answer-btn:hover { transform: translateY(-2px); box-shadow: 0 6px
 }
 
 .container.quiz-active .title-logo {
-    width: 100px; /* クイズが始まったら少し小さくする */
+    top: 80px;
+    left: 122px;
+    width: 150px;
+}
+.container.quiz-active {
+    padding-top: 230px;
+}
+.container.result-active {
+    padding-top: 10px;
 }

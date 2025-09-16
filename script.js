@@ -27,16 +27,17 @@ const majorData = {
 
 // --- 診断のルート分岐設定 ---
 const quizTree = {
-    'q1': { text: '社会や身の回りの人が抱えている課題を見つけて「自分ならこうするのに」と考えることがよくある。', yes: 'q2', no: 'q5' },
-    'q2': { text: '社会の課題を企画やプロジェクトの形で「人と協力して動かす」ことに興味がある。', yes: 'q3', no: 'q6' },
-    'q3': { text: '自分のアイデアや企画したものを社会に発信し、反応を受けて改善していくことにやりがいを感じる。', yes: 'q4', no: 'q6' },
-    'q4': { text: '自分のアイデアを社会に発信していく場合、自分が手を動かして技術やサービスを「作ること」に重きを置きたい。', yes: 'メディアイノベーション専攻', no: 'メディアコミュニケーション専攻' },
-    'q5': { text: 'たとえ人や社会の役に立たない可能性があっても「自分の表現したいもの」や「やりたいこと」を追求したい。', yes: 'q7', no: 'q9' },
-    'q6': { text: 'プログラミングや電子工作などテクノロジーを活用して「自分で作って解決すること」に興味がある。', yes: 'q4', no: 'メディアコミュニケーション専攻' },
-    'q7': { text: '映像を見る時は視覚情報よりも聴覚情報の方に意識が向きがちである。', yes: 'q8', no: 'q9' },
-    'q8': { text: '聴覚的なアプローチから表現したり、音や音楽を用いて環境や仕組みづくりに活かしたりしたい。', yes: '音楽メディア専攻', no: 'メディアデザイン専攻' },
-    'q9': { text: 'グラフィックや動画、3Dモデリングなど、複数の制作ソフトや表現技法を学ぶことに対しては苦に思わない。', yes: 'q10', no: 'メディアコミュニケーション専攻' },
-    'q10': { text: '批評的に物事を考えたり、「本当にそれが必要？」と疑問を持つことが多い。', yes: 'メディアコミュニケーション専攻', no: 'メディアデザイン専攻' }
+    'q1': {
+         text: '社会や身の回りの人が抱えている課題を見つけて「自分ならこうするのに」と考えることがよくある。', yes: 'q2', no: 'q5', icon:'./img/q1_icon.png' },
+    'q2': { text: '社会の課題を企画やプロジェクトの形で「人と協力して動かす」ことに興味がある。', yes: 'q3', no: 'q6', icon:'./img/q2_icon.png' },
+    'q3': { text: '自分のアイデアや企画したものを社会に発信し、反応を受けて改善していくことにやりがいを感じる。', yes: 'q4', no: 'q6', icon:'./img/q3_icon.png' },
+    'q4': { text: '自分のアイデアを社会に発信していく場合、自分が手を動かして技術やサービスを「作ること」に重きを置きたい。', yes: 'メディアイノベーション専攻', no: 'メディアコミュニケーション専攻', icon:'./img/q4_icon.png' },
+    'q5': { text: 'たとえ人や社会の役に立たない可能性があっても「自分の表現したいもの」や「やりたいこと」を追求したい。', yes: 'q7', no: 'q9', icon:'./img/q5_icon.png' },
+    'q6': { text: 'プログラミングや電子工作などテクノロジーを活用して「自分で作って解決すること」に興味がある。', yes: 'q4', no: 'メディアコミュニケーション専攻', icon:'./img/q6_icon.png' },
+    'q7': { text: '映像を見る時は視覚情報よりも聴覚情報の方に意識が向きがちである。', yes: 'q8', no: 'q9', icon:'./img/q7_icon.png' },
+    'q8': { text: '聴覚的なアプローチから表現したり、音や音楽を用いて環境や仕組みづくりに活かしたりしたい。', yes: '音楽メディア専攻', no: 'メディアデザイン専攻', icon:'./img/q8_icon.png' },
+    'q9': { text: 'グラフィックや動画、3Dモデリングなど、複数の制作ソフトや表現技法を学ぶことに対しては苦に思わない。', yes: 'q10', no: 'メディアコミュニケーション専攻', icon:'./img/q10_icon.png' },
+    'q10': { text: '批評的に物事を考えたり、「本当にそれが必要？」と疑問を持つことが多い。', yes: 'メディアコミュニケーション専攻', no: 'メディアデザイン専攻', icon:'./img/q10_icon.png' }
 };
 
 // --- プログラム本体 ---
@@ -48,6 +49,7 @@ const startBtn = document.getElementById('start-btn');
 const questionText = document.getElementById('question-text');
 const yesBtn = document.getElementById('yes-btn');
 const noBtn = document.getElementById('no-btn');
+const quizIconImg = document.getElementById('quiz-icon-img');
 const restartBtn = document.getElementById('restart-btn');
 
 // 結果画面の新しい要素
@@ -78,6 +80,7 @@ function initialize() {
 function displayQuestion(questionId) {
     const question = quizTree[questionId];
     questionText.textContent = question.text;
+    quizIconImg.src = question.icon;
 }
 
 function showResult(majorName) {
