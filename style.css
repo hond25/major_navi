@@ -48,6 +48,7 @@ h1 .senko-navi { font-size: 48px; padding-left: 48px; transition: font-size 0.3s
     height: auto; /* 高さは自動で調整 */
     transition: width 0.3s ease, top 0.3s ease, left 0.3s ease;
     margin-bottom: 10px; /* ボタンとの間隔を調整 */
+    cursor: pointer;
 }
 
 h2 {

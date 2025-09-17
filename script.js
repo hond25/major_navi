@@ -42,6 +42,7 @@ const quizTree = {
 
 // --- プログラム本体 ---
 const container = document.querySelector('.container');
+const titleLogo = document.querySelector('.title-logo');
 const startScreen = document.getElementById('start-screen');
 const quizScreen = document.getElementById('quiz-screen');
 const resultsScreen = document.getElementById('results-screen');
@@ -134,5 +135,6 @@ startBtn.addEventListener('click', () => {
 yesBtn.addEventListener('click', () => handleAnswer(true));
 noBtn.addEventListener('click', () => handleAnswer(false));
 restartBtn.addEventListener('click', initialize);
+titleLogo.addEventListener('click', initialize);
 
 initialize();
