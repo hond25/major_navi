@@ -17,10 +17,10 @@ body.state-active {
 }
 
 .container {
-    padding-top: 140px; /* ← 194px (ロゴの上位置) + 280px (ロゴの高さ) + 67px (指定マージン) */
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 25px;
+    /* padding-top: 0px; ← 194px (ロゴの上位置) + 280px (ロゴの高さ) + 67px (指定マージン) */
+    /* padding-left: 15px; */
+    /* padding-right: 15px; */
+    /* padding-bottom: 25px; */
     border-radius: 12px;
     width: 100%;
     max-width: 600px;
@@ -43,9 +43,7 @@ h1 .wakuwaku { font-size: 36px; transition: font-size 0.3s ease; }
 h1 .senko-navi { font-size: 48px; padding-left: 48px; transition: font-size 0.3s ease, padding-left 0.3s ease; }
 
 .title-logo {
-    position: absolute; /* ← 追加：絶対位置指定を有効にする */
-    top: 194px;         /* ← 追加：上からの位置 */
-    left: 104px;  
+    justify-content: center;
     width: 186px; /* ロゴの基本サイズ */
     height: auto; /* 高さは自動で調整 */
     transition: width 0.3s ease, top 0.3s ease, left 0.3s ease;
@@ -88,15 +86,40 @@ p { line-height: 1.7; font-size: 24px; color: #000000; }
     height: 50px; 
     object-fit: contain; /* 画像がコンテナに収まるように調整 */
 }
-button, .answer-btn { border: none; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: all 0.3s ease; }
-button:hover, .answer-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
-.btn-group { margin-top: 72px; display: flex; flex-direction: row; gap: 15px; justify-content: center; }
-.answer-btn {
-    color: white; padding: 15px 20px; border-radius: 30px;
-    flex-grow: 1; max-width: 130px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+button, .answer-btn {
+    border: none; 
+    font-size: 1.1em; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
 }
-#no-btn { background-color: #79A3FF; border: 2px solid #96C7FF; }
-#yes-btn { background-color: #FF5B49; border: 2px solid #FFAE91; }
+button:hover, .answer-btn:hover {
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
+}
+.btn-group {
+    margin-top: 72px; 
+    display: flex; 
+    flex-direction: row; 
+    gap: 15px; 
+    justify-content: center; 
+}
+.answer-btn {
+    color: white; 
+    padding: 15px 20px; 
+    border-radius: 30px;
+    flex-grow: 1; 
+    max-width: 130px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+#no-btn {
+    background-color: #79A3FF; 
+    border: 2px solid #96C7FF; 
+}
+#yes-btn {
+    background-color: #FF5B49; 
+    border: 2px solid #FFAE91; 
+}
 
 /* --- 結果画面のスタイル --- */
 .result-title {
@@ -231,12 +254,12 @@ button:hover, .answer-btn:hover { transform: translateY(-2px); box-shadow: 0 6px
 }
 
 .container.quiz-active .title-logo {
-    top: 80px;
+    top: 60px;
     left: 122px;
     width: 150px;
 }
 .container.quiz-active {
-    padding-top: 230px;
+    padding-top: 40px;
 }
 .container.result-active {
     padding-top: 10px;
