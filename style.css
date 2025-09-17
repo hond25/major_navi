@@ -259,7 +259,7 @@ button:hover, .answer-btn:hover {
     width: 150px;
 }
 .container.quiz-active {
-    padding-top: 40px;
+    padding-top: 20px;
 }
 .container.result-active {
     padding-top: 10px;
