@@ -44,7 +44,7 @@ h1 .senko-navi { font-size: 48px; padding-left: 48px; transition: font-size 0.3s
 
 .title-logo {
     justify-content: center;
-    width: 186px; /* ロゴの基本サイズ */
+    width: 200px; /* ロゴの基本サイズ */
     height: auto; /* 高さは自動で調整 */
     transition: width 0.3s ease, top 0.3s ease, left 0.3s ease;
     margin-bottom: 10px; /* ボタンとの間隔を調整 */
