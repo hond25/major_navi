@@ -8,7 +8,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    padding: 15px;
+    padding: 10px;
     box-sizing: border-box;
 }
 body.state-active {
@@ -262,5 +262,5 @@ button:hover, .answer-btn:hover {
     padding-top: 20px;
 }
 .container.result-active {
-    padding-top: 10px;
+    padding-top: 0px;
 }
