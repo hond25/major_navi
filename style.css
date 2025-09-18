@@ -12,7 +12,7 @@ body {
     margin: 0;
     padding: 10px;
     box-sizing: border-box;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 body.state-active {
     align-items: flex-start;
@@ -188,15 +188,15 @@ button:hover, .answer-btn:hover {
     font-size: 14px;
     font-weight: bold;
     color: #3A3A3A;
-    margin: 0 auto 16px;
+    margin: 0 auto 8px;
     max-width: 300px;
 }
 
 .description-box {
     background: #F7F7F7;
     border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 24px;
+    padding: 10px;
+    margin-bottom: 12px;
 }
 
 #result-major-description {
