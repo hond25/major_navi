@@ -2,26 +2,30 @@ const majorData = {
     'メディアイノベーション専攻': {
         catchphrase: 'ITクリエイターになるために必要な知識を幅広く学ぶことのできる専攻',
         description: '様々なテクノロジーを活用して新たなサービスを生み出すための理論や技術を習得する。デザインやプロトタイプなど実際に自分で手を動かして作成・発表する授業が多い。',
-        tags: ['UI/UX', 'プログラミング', 'IoTデバイス', 'webサイト開発', 'webサービス企画'],
-        themeClass: 'theme-media-innovation'
+        tags: ['UI/UX', 'プログラミング', 'IoTデバイス', 'webサービス企画', '課題解決'],
+        themeClass: 'theme-media-innovation',
+        link: 'https://www.kyoto-seika.ac.jp/edu/media/mediainnovation/index.html'
     },
     'メディアコミュニケーション専攻': {
         catchphrase: '多様な人たちと連携しながらメディアやコンテンツを企画・開発を行う専攻',
         description: '対面コミュニケーションを含む様々な相互作用について学ぶともに、リサーチ・運営・プレゼンテーション等に取り組みながら自分たちの企画をイベントやプロジェクトなどの現場で検証していく。',
-        tags: ['プロジェクト企画', 'リサーチ', 'イベント運営', 'プレゼンテーション', 'ワークショップ'],
-        themeClass: 'theme-media-communication'
+        tags: ['プロジェクト企画', 'リサーチ', 'イベント運営', 'ワークショップ'],
+        themeClass: 'theme-media-communication',
+        link: 'https://www.kyoto-seika.ac.jp/edu/media/mediacommunication/index.html'
     },
     '音楽メディア専攻': {
         catchphrase: '「音」に関わること全般を幅広く学び、新たな表現を創造する専攻',
-        description: '音楽はもちろん、環境音や効果音といった「非楽音」の分野にも力を入れているの音楽はもちろん、環境音や効果音といった「非楽音」の分野にも力を入れている。スタジオでのレコーディングやライブでのPAなど、音楽の現場を「担う」側の技術も積極的に学ぶことができる。',
-        tags: ['作曲/編曲', 'サウンドデザイン', '音楽プロデュース', 'サウンドスケープ'],
-        themeClass: 'theme-music-media'
+        description: '音楽はもちろん、環境音や効果音といった「非楽音」の分野にも力を入れている。スタジオでのレコーディングやライブでのPAなど、音楽の現場を「担う」側の技術も積極的に学ぶことができる。',
+        tags: ['作曲/編曲', 'サウンドデザイン', 'サウンドスケープ', '音楽プログラミング'],
+        themeClass: 'theme-music-media',
+        link: 'https://www.kyoto-seika.ac.jp/edu/media/soundcreation/index.html'
     },
     'メディアデザイン専攻': {
         catchphrase: 'ビジュアル表現を超えたまだ見ぬメディアの使い方を創造する専攻',
         description: '企画・編集、グラフィックデザイン、映像製作、インタラクションなどの基礎技法を幅広く学ぶ。学年が上がるにつれてそれらを組み合わせていきながら自身の表現を追求していくことができる。',
-        tags: ['グラフィック', '映像制作', '3DCG', 'インタラクション', 'プログラミング'],
-        themeClass: 'theme-media-design'
+        tags: ['グラフィック', '映像制作', '3DCG', 'インタラクション', 'メディアアート'],
+        themeClass: 'theme-media-design',
+        link: 'https://www.kyoto-seika.ac.jp/edu/media/mediadesign/index.html'
     }
 };
 
@@ -58,7 +62,8 @@ const resultMajorName = document.getElementById('result-major-name');
 const resultCatchphrase = document.getElementById('result-catchphrase');
 const resultMajorDescription = document.getElementById('result-major-description');
 const resultTagsContainer = document.getElementById('result-tags');
-const majorLinkBtn = document.getElementById('major-link-btn');
+// const majorLinkBtn = document.getElementById('major-link-btn');
+const majorLinkA = document.getElementById('major-link-a');
 
 let currentQuestionId;
 
@@ -85,9 +90,13 @@ function displayQuestion(questionId) {
 }
 
 function showResult(majorName) {
+    // 古いテーマクラスを全て削除する（安全のため）
+    Object.values(majorData).forEach(data => {
+        resultsScreen.classList.remove(data.themeClass);
+    });
+
     quizScreen.classList.add('hidden');
-    resultsScreen.classList.remove('hidden');
-    resultsScreen.className = '';
+    resultsScreen.classList.remove('hidden'); // 'hidden'クラスだけを外す
     container.classList.remove('quiz-active');
     container.classList.add('result-active');
     
@@ -99,7 +108,8 @@ function showResult(majorName) {
     
     resultCatchphrase.textContent = data.catchphrase;
     resultMajorDescription.textContent = data.description;
-    majorLinkBtn.textContent = majorName;
+    // majorLinkBtn.textContent = majorName;
+    
 
     resultTagsContainer.innerHTML = '';
     data.tags.forEach(tagText => {
@@ -109,6 +119,7 @@ function showResult(majorName) {
         resultTagsContainer.appendChild(tagElement);
     });
 
+    // 新しいテーマクラスを追加する
     resultsScreen.classList.add(data.themeClass);
 }
 

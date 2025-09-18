@@ -252,21 +252,31 @@ button:hover, .answer-btn:hover {
 }
 
 /* --- 各専攻のテーマカラー --- */
-.theme-media-innovation #result-major-name { color: #67C5E0; } /* ★ 専攻名の文字色 */
-.theme-media-innovation #major-link-btn { background-color: #67C5E0; }
-/* .theme-media-innovation #restart-btn { border-color: #67C5E0; } */
+#results-screen.theme-media-innovation #result-major-name { color: #67C5E0; }
+#results-screen.theme-media-communication #result-major-name { color: #FFC562; }
+#results-screen.theme-music-media #result-major-name { color: #F15FB4; }
+#results-screen.theme-media-design #result-major-name { color: #BCDC77; }
 
-.theme-media-communication #result-major-name { color: #FFC562; } /* ★ 専攻名の文字色 */
-.theme-media-communication #major-link-btn { background-color: #FFC562; }
-/* .theme-media-communication #restart-btn { border-color: #FFC562; } */
+/* major-link-btnも同様に修正（訪問済みリンクの色も指定） */
+#results-screen.theme-media-innovation #major-link-btn,
+#results-screen.theme-media-innovation #major-link-btn:visited { 
+    color: #67C5E0; 
+}
 
-.theme-music-media #result-major-name { color: #F15FB4; } /* ★ 専攻名の文字色 */
-.theme-music-media #major-link-btn { background-color: #F15FB4; }
-/* .theme-music-media #restart-btn { border-color: #F15FB4; } */
+#results-screen.theme-media-communication #major-link-btn,
+#results-screen.theme-media-communication #major-link-btn:visited { 
+    color: #FFC562; 
+}
 
-.theme-media-design #result-major-name { color: #BCDC77; } /* ★ 専攻名の文字色 */
-.theme-media-design #major-link-btn { background-color: #BCDC77; }
-/* .theme-media-design #restart-btn { border-color: #E76F51; } */
+#results-screen.theme-music-media #major-link-btn,
+#results-screen.theme-music-media #major-link-btn:visited { 
+    color: #F15FB4; 
+}
+
+#results-screen.theme-media-design #major-link-btn,
+#results-screen.theme-media-design #major-link-btn:visited { 
+    color: #BCDC77; 
+}
 
 
 
@@ -414,3 +424,12 @@ button:hover, .answer-btn:hover {
         opacity: 0;
     }
 }
+#major-link-btn {
+    font-family: 'Rounded Mplus 1c', sans-serif;
+    font-size: 16px; /* フォントサイズを調整 */
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+
