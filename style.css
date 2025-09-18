@@ -16,7 +16,7 @@ body {
 }
 body.state-active {
     align-items: flex-start;
-    padding-top: 4vh;
+    padding-top: 1vh;
 }
 
 .container {
@@ -143,6 +143,7 @@ button:hover, .answer-btn:hover {
     font-weight: bold;
     color: #fff;
     margin-bottom: 6px;
+    margin-top: 0;
     text-shadow:
         2px 2px 0 #DF600F,
         -2px -2px 0 #DF600F,
@@ -152,6 +153,7 @@ button:hover, .answer-btn:hover {
         -2px 0 0 #DF600F,
         0 2px 0 #DF600F,
         0 -2px 0 #DF600F;
+
 }
 
 .result-card {
@@ -269,6 +271,10 @@ button:hover, .answer-btn:hover {
 
 
 .container.result-active h1 { display: none; }
+
+.container.result-active {
+    padding-top: 5px;
+}
 
 .container.result-active #results-screen {
     width: 100%;
