@@ -73,6 +73,7 @@ p {
     line-height: 1.7; 
     font-size: 24px; 
     color: #8A3F0D; 
+    line-height: 130%;
 }
 .hidden { display: none; }
 
