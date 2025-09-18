@@ -104,7 +104,7 @@ p {
 }
 button, .answer-btn {
     border: none; 
-    font-size: 1.1em; 
+    font-size: 16px; 
     font-weight: bold; 
     cursor: pointer; 
     transition: all 0.3s ease; 
@@ -244,6 +244,8 @@ button:hover, .answer-btn:hover {
     padding: 16px;
     border-radius: 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    gap: 6px;
+    align-items: center;
 }
 
 #restart-btn {
@@ -252,6 +254,10 @@ button:hover, .answer-btn:hover {
     padding: 16px;
     border-radius: 30px;
     color: #FF8E4A;
+    display: flex; /* Flexboxを有効化 */
+    align-items: center; /* 上下中央揃え */
+    justify-content: center; /* 左右中央揃え */
+    gap: 6px; /* テキストとアイコンの間隔 */
 }
 
 /* --- 各専攻のテーマカラー --- */
