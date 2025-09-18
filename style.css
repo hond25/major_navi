@@ -33,13 +33,14 @@ body.state-active {
     align-items: center;
     position: relative; /* ← positionを追加 */
     z-index: 1; 
-    transition: padding-top 0.3s ease;
+    /* transition: padding-top 0.3s ease; */
+    transition: padding-top 0.3s ease, transform 0.3s ease;
+    transform: translateY(-40px); /* ← この行を追加。-40pxで上に40px移動します */
 }
 
 h1 {
     color: #ffffff;
     margin-top: 0;
-    /* margin-bottom: 20px; */
     line-height: 1.2;
 }
 
@@ -266,6 +267,7 @@ button:hover, .answer-btn:hover {
 
 .container.result-active {
     padding-top: 5px;
+    transform: translateY(0); /* ← この行を追加 */
 }
 
 .container.result-active #results-screen {
@@ -287,6 +289,7 @@ button:hover, .answer-btn:hover {
 }
 .container.quiz-active {
     padding-top: 20px;
+    transform: translateY(0); /* ← この行を追加 */
 }
 .container.result-active {
     padding-top: 0px;
@@ -412,6 +415,8 @@ button:hover, .answer-btn:hover {
     font-weight: bold;
     color: white; /* ← 色を白に統一 */
     text-decoration: none; /* ← 下線を削除 */
+    justify-content: center;
+    text-align: center;
 }
 
 
