@@ -1,6 +1,8 @@
 /* --- 基本スタイル --- */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Hiragino Sans', 'Noto Sans CJK JP', sans-serif;
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Hiragino Sans', 'Noto Sans CJK JP', sans-serif; */
+    font-family: 'Rounded Mplus 1c', sans-serif;
+
     background: linear-gradient(180deg, #FFBE7C, #FFA269);
     color: #333;
     display: flex;
@@ -28,6 +30,8 @@ body.state-active {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative; /* ← positionを追加 */
+    z-index: 1; 
     transition: padding-top 0.3s ease;
 }
 
@@ -62,10 +66,17 @@ h2 {
     margin-top: 0;
     margin-bottom: 30px;
 }
-p { line-height: 1.7; font-size: 24px; color: #000000; }
+p {
+    font-family: 'Rounded Mplus 1c', sans-serif;
+    font-weight: bold;
+    line-height: 1.7; 
+    font-size: 24px; 
+    color: #8A3F0D; 
+}
 .hidden { display: none; }
 
 #start-btn {
+    font-family: 'Rounded Mplus 1c', sans-serif;
     background-color: #FF823C; color: #ffffff; width: 174px; height: 48px;
     border-radius: 30px; padding: 0; display: inline-flex;
     justify-content: center; align-items: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -106,6 +117,7 @@ button:hover, .answer-btn:hover {
     justify-content: center; 
 }
 .answer-btn {
+    font-family: 'Rounded Mplus 1c', sans-serif;
     color: white; 
     padding: 15px 20px; 
     border-radius: 30px;
@@ -114,19 +126,31 @@ button:hover, .answer-btn:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 #no-btn {
+    font-family: 'Rounded Mplus 1c', sans-serif;
     background-color: #79A3FF; 
     border: 2px solid #96C7FF; 
 }
 #yes-btn {
+    font-family: 'Rounded Mplus 1c', sans-serif;
     background-color: #FF5B49; 
     border: 2px solid #FFAE91; 
 }
 
 /* --- 結果画面のスタイル --- */
 .result-title {
-    font-size: 16px;
+    font-size: 26px;
+    font-weight: bold;
     color: #fff;
     margin-bottom: 16px;
+    text-shadow:
+        2px 2px 0 #DF600F,
+        -2px -2px 0 #DF600F,
+        2px -2px 0 #DF600F,
+        -2px 2px 0 #DF600F,
+        2px 0 0 #DF600F,
+        -2px 0 0 #DF600F,
+        0 2px 0 #DF600F,
+        0 -2px 0 #DF600F;
 }
 
 .result-card {
@@ -175,7 +199,7 @@ button:hover, .answer-btn:hover {
 #result-major-description {
     font-size: 14px;
     line-height: 1.8;
-    color: #555;
+    color: #5F5F5F;
     text-align: left;
     margin: 0;
 }
@@ -190,6 +214,7 @@ button:hover, .answer-btn:hover {
 }
 
 .tag-pill {
+    font-family: 'Rounded Mplus 1c', sans-serif;
     background: linear-gradient(30deg, #FF8174, #FFAF4D);
     color: #ffffff;
     padding: 6px 14px;
@@ -208,6 +233,7 @@ button:hover, .answer-btn:hover {
 }
 
 #major-link-btn {
+    font-family: 'Rounded Mplus 1c', sans-serif;
     color: #fff;
     padding: 16px;
     border-radius: 30px;
@@ -215,6 +241,7 @@ button:hover, .answer-btn:hover {
 }
 
 #restart-btn {
+    font-family: 'Rounded Mplus 1c', sans-serif;
     background-color: #fff;
     padding: 16px;
     border-radius: 30px;
@@ -264,4 +291,119 @@ button:hover, .answer-btn:hover {
 }
 .container.result-active {
     padding-top: 0px;
+}
+/* --- 泡アニメーション --- */
+.bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+.bubbles li {
+    position: absolute;
+    list-style: none;
+    display: block;
+    width: 20px;
+    height: 20px;
+    /* ↓ 色をより白く（不透明に）変更 */
+    background: rgba(255, 255, 255, 0.5); 
+    /* ↓ スピードを上げるため、基本の秒数を短く変更 */
+    animation: bubble-rise 15s linear infinite; 
+    bottom: -150px;
+    /* ↓ 完全な円にするため追加 */
+    border-radius: 50%; 
+}
+
+/* :nth-childを使って、各泡の大きさと動きをランダムに見せる */
+.bubbles li:nth-child(1) {
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+.bubbles li:nth-child(2) {
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 7s; /* ← スピードアップ */
+}
+
+.bubbles li:nth-child(3) {
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.bubbles li:nth-child(4) {
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 10s; /* ← スピードアップ */
+}
+
+.bubbles li:nth-child(5) {
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.bubbles li:nth-child(6) {
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.bubbles li:nth-child(7) {
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.bubbles li:nth-child(8) {
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 20s; /* ← スピードアップ */
+}
+
+.bubbles li:nth-child(9) {
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 18s; /* ← スピードアップ */
+}
+
+.bubbles li:nth-child(10) {
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 6s; /* ← スピードアップ */
+}
+
+/* 泡が昇る動きの定義 (変更なし) */
+@keyframes bubble-rise {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
 }
