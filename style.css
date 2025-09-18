@@ -417,6 +417,7 @@ button:hover, .answer-btn:hover {
     text-decoration: none; /* ← 下線を削除 */
     justify-content: center;
     text-align: center;
+    text-shadow: 0px 0px 12px #DF600F;
 }
 
 
