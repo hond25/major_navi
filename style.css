@@ -138,7 +138,7 @@ button:hover, .answer-btn:hover {
 
 /* --- 結果画面のスタイル --- */
 .result-title {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: bold;
     color: #fff;
     margin-bottom: 16px;
@@ -176,16 +176,16 @@ button:hover, .answer-btn:hover {
 /* 「専攻」という文字のスタイル */
 #result-major-name .senko-suffix {
     font-size: 16px;
-    font-weight: normal;
+    font-weight: bold;
     /* margin-left: 4px; を削除 */
     display: block; /* ← これが改行を強制します */
 }
 
 #result-catchphrase {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     color: #3A3A3A;
-    margin: 0 auto 20px;
+    margin: 0 auto 16px;
     max-width: 300px;
 }
 
