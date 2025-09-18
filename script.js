@@ -109,6 +109,7 @@ function showResult(majorName) {
     resultCatchphrase.textContent = data.catchphrase;
     resultMajorDescription.textContent = data.description;
     // majorLinkBtn.textContent = majorName;
+    majorLinkA.href = data.link;
     
 
     resultTagsContainer.innerHTML = '';

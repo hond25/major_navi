@@ -257,26 +257,6 @@ button:hover, .answer-btn:hover {
 #results-screen.theme-music-media #result-major-name { color: #F15FB4; }
 #results-screen.theme-media-design #result-major-name { color: #BCDC77; }
 
-/* major-link-btnも同様に修正（訪問済みリンクの色も指定） */
-#results-screen.theme-media-innovation #major-link-btn,
-#results-screen.theme-media-innovation #major-link-btn:visited { 
-    color: #67C5E0; 
-}
-
-#results-screen.theme-media-communication #major-link-btn,
-#results-screen.theme-media-communication #major-link-btn:visited { 
-    color: #FFC562; 
-}
-
-#results-screen.theme-music-media #major-link-btn,
-#results-screen.theme-music-media #major-link-btn:visited { 
-    color: #F15FB4; 
-}
-
-#results-screen.theme-media-design #major-link-btn,
-#results-screen.theme-media-design #major-link-btn:visited { 
-    color: #BCDC77; 
-}
 
 
 
@@ -424,12 +404,12 @@ button:hover, .answer-btn:hover {
         opacity: 0;
     }
 }
-#major-link-btn {
+#major-link-a {
     font-family: 'Rounded Mplus 1c', sans-serif;
-    font-size: 16px; /* フォントサイズを調整 */
+    font-size: 16px;
     font-weight: bold;
-    color: white;
-    text-decoration: none;
+    color: white; /* ← 色を白に統一 */
+    text-decoration: none; /* ← 下線を削除 */
 }
 
 
