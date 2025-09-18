@@ -226,7 +226,7 @@ button:hover, .answer-btn:hover {
     padding: 6px 14px;
     border-radius: 20px;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .result-actions {
