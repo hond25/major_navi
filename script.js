@@ -105,6 +105,7 @@ const yesBtn = document.getElementById('yes-btn');
 const noBtn = document.getElementById('no-btn');
 const quizIconImg = document.getElementById('quiz-icon-img');
 const restartBtn = document.getElementById('restart-btn');
+const backBtn = document.getElementById('back-btn');
 
 // 結果画面の新しい要素
 const resultMajorName = document.getElementById('result-major-name');
@@ -115,14 +116,13 @@ const resultTagsContainer = document.getElementById('result-tags');
 const majorLinkA = document.getElementById('major-link-a');
 
 let currentQuestionId;
+let questionHistory = [];
 
 function initialize() {
     currentQuestionId = 'q1';
+    questionHistory = [];
     startScreen.classList.remove('hidden');
     quizScreen.classList.add('hidden');
-    
-    // ★★★ 修正箇所 ★★★
-    // classNameを直接書き換えて、テーマクラスを削除しつつhiddenクラスを確実に適用
     resultsScreen.className = 'hidden';
 
     displayQuestion(currentQuestionId);
@@ -136,6 +136,7 @@ function displayQuestion(questionId) {
     const question = quizTree[questionId];
     questionText.textContent = question.text;
     quizIconImg.src = question.icon;
+    backBtn.classList.toggle('hidden', questionHistory.length === 0);
 }
 
 function showResult(majorName) {
@@ -174,6 +175,7 @@ function showResult(majorName) {
 }
 
 function handleAnswer(isYes) {
+    questionHistory.push(currentQuestionId);
     const currentQuestion = quizTree[currentQuestionId];
     const nextStep = isYes ? currentQuestion.yes : currentQuestion.no;
 
@@ -197,5 +199,11 @@ yesBtn.addEventListener('click', () => handleAnswer(true));
 noBtn.addEventListener('click', () => handleAnswer(false));
 restartBtn.addEventListener('click', initialize);
 titleLogo.addEventListener('click', initialize);
+backBtn.addEventListener('click', () => {
+    if (questionHistory.length > 0) {
+        currentQuestionId = questionHistory.pop(); // 履歴から前の質問IDを取り出す
+        displayQuestion(currentQuestionId);
+    }
+});
 
 initialize();
