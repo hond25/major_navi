@@ -430,7 +430,7 @@ button:hover, .answer-btn:hover {
 #back-btn {
     position: absolute;
     top: 20px;
-    left: 20px;
+    left: 10px;
     background: none;
     border: none;
     padding: 10px;
